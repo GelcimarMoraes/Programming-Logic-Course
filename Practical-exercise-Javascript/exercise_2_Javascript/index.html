@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    .filho{
+      width: 500px;
+      height: 500px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="pai">
+    <div class="filho">
+      
+    </div>
+    <div class="filho">
+
+    </div>
+    <div class="filho">
+      <div class="filho-do-filho"></div>
+    </div>
+    <div class="filho">
+      <div class="filho-do-filho animar"></div>
+    </div>
+    <div class="filho">
+
+    </div>
+    <div class="filho">
+
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+  <script>
+    // 1 Verificar se existe elemento filho.
+    // 2 Existe a chasse x no elemento filho.
+    // 3 SIM, APLICAR LARGURA ANIMANDO O ELEMENTO
+    $(function(){
+
+        $('.pai .filho').each(function(){
+          var obj = $(this).find('.filho-do-filho');
+          if(obj.length > 0){
+            if(obj.hasClass('animar')){
+              //Chegamos no final da Lógica!
+              obj.animate({width:'100px'},3000,function(){
+                console.log('Terminamos');
+              });
+            }
+          }
+        })
+
+    })
+
+  </script>
+
+</body>
+</html>

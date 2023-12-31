@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    .filho{
+      width: 500px;
+      height: 500px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="pai">
+    <div class="filho"></div>
+    <div class="filho"></div>
+    <div class="filho"></div>
+    <div class="filho"></div>
+    <div class="filho"></div>
+    <div class="filho"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    //Aplicar cor vermelha apenas nos elementos que possui número imar!
+
+    $(function(){
+      var index = 0;
+      $('.pai .filho').each(function(){
+        if(index%2 == 1){
+          $(this).css('background','red');
+        }
+        index++;
+      })
+      
+    })
+  </script>
+</body>
+</html>
